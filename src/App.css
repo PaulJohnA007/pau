@@ -1,18 +1,14 @@
-* {
+ * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   text-decoration: none;
 }
 
-body {
-  font-family: "Roboto";
-}
 
 #hero {
   width: 100%;
-  min-height: 100vh;
-  background: url(assets/backg.jpg) center no-repeat;
+  min-height: 100vh; 
   background-size: cover;
   padding-top: 32px;
   display: flex;
@@ -25,10 +21,7 @@ body {
 #hero::after {
   content: '';
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  inset: 0;
   background: rgba(0, 0, 0, 0.3);
 }
 
@@ -39,175 +32,119 @@ body {
   z-index: 1;
 }
 
-@media screen and (max-width: 768px) {
-  #hero {
-    padding-top: 50px;
-  }
-  .container {
-    padding: 0 15px;
-  }
-}
-
+/* Navbar */
 .navbar {
   display: flex;
-  justify-content: space-around;
-  margin-bottom: 100px;
+  justify-content: space-between;
   align-items: center;
   padding: 0 20px;
+  margin-bottom: 80px;
 }
 
 .navbar .menu {
   display: flex;
   align-items: center;
+  gap: 20px;
 }
 
 .navbar .menu a {
   color: #fff;
-  margin-left: 20px;
-  font-size: 1rem;
-  transition: all 0.4s ease-in-out;
-  letter-spacing: 0.5px;
+  font-size: 1.2rem;
+  letter-spacing: 3px;
   padding-bottom: 5px;
+  text-decoration: none;
+  transition: color 0.3s ease, border-bottom 0.3s ease;
+  border-bottom: 2px solid transparent;
 }
 
 .navbar .menu a:hover {
-  border-bottom: 2px solid #fff;
+  color: #f0f0f0;
+  border-bottom: 2px solid #f0f0f0;
+} 
+
+.navbar .menu a:hover,
+.navbar .menu a:focus,
+.navbar .menu a:active {
+ color: rgb(255, 255, 0);
+  border-bottom: 2px solid #f0f0f0;
   padding-bottom: 10px;
 }
 
-.navbar .menu a:focus, .navbar .menu a:active {
-  color: #f0f0f0;
-  border-bottom: 2px solid #f0f0f0;
-}
-
-.navbar .menu a:first-child {
-  margin-left: 0;
-}
-
-@media screen and (max-width: 768px) {
-  .navbar {
-    flex-direction: column;
-    margin-bottom: 50px;
-  }
-  
-  .navbar .menu {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .navbar .menu a {
-    margin-left: 0;
-    margin-bottom: 10px;
-  }
-}
-
+/* Logo */
 .logo a { 
   font-size: 40px;
   font-weight: 700;
-  color: rgb(255, 255 , 0);
+  color: rgb(255, 255, 0);
   background-color: rgba(0, 0, 0, 0.1);
   padding: 10px 20px;
   border-radius: 10px;
   display: inline-block;
-  text-align: center; 
   transition: all 0.3s ease-in-out;
 }
+
 .logo a:hover {
-  background-color:  rgba(255, 255, 255, 0.2);
+  background-color: rgba(255, 255, 255, 0.2);
   transform: scale(1.05);
 }
 
-
-.menu {
+/* Hero Content */
+.hero-content {
   display: flex;
-  gap: 15px;
   align-items: center;
-  padding: 10px 20px;
-  background: rgba(0, 0, 0, 0.4);
-  border-radius: 10px;
+  justify-content: center;
+  gap: 5rem;
+  flex-wrap: wrap;
+  text-align: left;
 }
 
-.menu a {
-  text-decoration: none;
-  color: rgb(0, 0, 0);
-  font-size: 1.1rem;
-  font-weight: bold;
-  transition: color 0.2s ease, transform 0.2s ease;
-  padding: 8px 12px;
-  border-radius: 4px;
-}
-
-.menu a:hover {
-  color: #0077ff;
-  transform: scale(1.5);
-  background: rgba(255, 255, 255, 0.1);
-}
-
-.menu a:focus, .menu a:active {
-  color: #0077ff;
-  background: rgba(255, 255, 255, 0.2);
-}
-
+/* Hero Text */
 .hero-box {
-  text-align: center; 
-  color: rgb(255, 255, 255); 
-  max-width: 900px;
+  color: #fff;
+  max-width: 700px;
   margin: auto;
+  text-align: center;
 }
 
 .hero-heading {
-  font-size: 5rem;
+  font-size: 4rem;
   color: #ffd700;
   margin-bottom: 25px;
-  line-height: 1.7;
   text-shadow: 3px 3px 12px rgba(0, 0, 0, 0.6);
-  font-weight: 700;
+  font-weight: 800;
 }
-.hero-2ndheading{
-  font-size: 32px;
-  margin-top: -50px;
-  margin-bottom: 15px;
+
+.hero-2ndheading {
+  font-size: 2rem;
+  margin-top: 1rem;
+  color: #f8f8f8;
+  margin-bottom: 20px;
 }
 
 .hero-desc {
-  font-size: 1.3rem;
-  margin-bottom: 35px;
+  font-size: 1.2rem;
   line-height: 1.7;
   opacity: 0.95;
   max-width: 700px;
-  margin: auto;
+  margin: 1rem auto;
+  color: #ddd;
 }
 
-@media screen and (max-width: 768px) {
-  .hero-heading {
-    font-size: 3rem;
-  }
-
-  .hero-desc {
-    font-size: 1.2rem;
-  }
-
-  .menu {
-    gap: 14px;
-  }
-}
-
+/* Call-to-Action Button */
 .btn-box {
-  margin-top: 10px;
+  margin-top: 1.5rem;
 }
 
 .cta-btn-try {
-  text-decoration: none;
+  display: inline-block;
   padding: 10px 20px;
   background: linear-gradient(135deg, #ffd700, #ff8c00);
-  color: rgb(0, 0, 0);
+  color: black;
   font-size: 1.4rem;
   font-weight: bold;
   border-radius: 10px;
   transition: background-color 0.3s ease, transform 0.3s ease;
   box-shadow: 0 5px 12px rgba(0, 0, 0, 0.3);
-  display: inline-block;
-  letter-spacing: 1px;
+  text-decoration: none;
 }
 
 .cta-btn-try:hover {
@@ -216,26 +153,81 @@ body {
   box-shadow: 0 0 10px #0077ff;
 }
 
-.cta-btn-try:focus, .cta-btn-try:active {
-  background: #ffb366;
-  transform: scale(1.08);
+/* Social Media Icons */
+.social-med {
+  margin-top: 1.5rem;
 }
 
-.social-med{
-    margin-top: 20px;
-
-}
-.social-med a{
+.social-med a {
   display: inline-flex;
   padding: 8px;
   border: 2px solid rgb(255, 217, 0);
   border-radius: 50%;
   font-size: 20px;
-  color: #ffffff;
-  margin: 0 8px;
+  color: #fff;
+  transition: transform 0.3s ease-in-out;
+  margin: 5px;
 }
+
 .social-med a:hover {
   background: linear-gradient(135deg, #fafafa, #ffc402);
-  transform: scale(1.12);
+  transform: scale(1.25);
   box-shadow: 0 0 10px #0077ff;
 }
+
+/* Profile Image */
+.profile-box {
+  max-width: 220px;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 14px 12px rgba(0, 0, 0, 0.3);
+  position: relative;
+  right: 150px;
+}
+
+.profile-img {
+  width: 100%;
+  height: auto;
+  border-radius: 50%;
+  transition: transform 0.3s ease-in-out;
+}
+
+.profile-img:hover {
+  transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  #hero {
+    padding-top: 50px;
+  }
+
+  .container {
+    padding: 0 15px;
+  }
+
+  .navbar {
+    flex-direction: column;
+    margin-bottom: 50px;
+    text-align: center;
+  }
+
+  .hero-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .profile-box {
+    max-width: 180px;
+    right: 0; /* Reset position for smaller screens */
+  }
+
+  .hero-heading {
+    font-size: 3rem;
+  }
+
+  .hero-desc {
+    font-size: 1.2rem;
+  }
+}
+

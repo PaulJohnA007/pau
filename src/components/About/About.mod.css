@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+body {
+    background-color: #000000;
+    color: #ffffff;
+    font-family: 'Press Start 2P', cursive;
+    text-align: center;
+}
+
+.containerx {
+    max-width: 1200px;
+    margin: auto;
+    padding: 10px;
+    border: 3px solid #00ffcc;
+    border-radius: 20px;
+    background: linear-gradient(145deg, #222, #111);
+    box-shadow: 0 0 20px #00ffcc;
+    width: 100%; 
+    max-width: 1200px;
+    padding: 30px 20px;
+    z-index: 1;
+}
+
+.title {
+    font-size: 24px;
+    color: #00ffcc;
+    text-shadow: 0 0 10px #00ffcc;
+    padding-bottom: 30px;
+}
+
+.highlight {
+    color: #ffcc00;
+}
+
+.details, .skills, .cta {
+    margin: 20px 0;
+    padding: 15px;
+    background: #1a1a1a;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+.skills ul {
+    padding: 15px;
+    list-style: none;
+    padding: 0;
+}
+
+.skills li {
+    margin: 10px 0;
+}
+
+.gaming-btn {
+    background: linear-gradient(45deg, #ff0000, #ff7300);
+    border: 2px solid #fff;
+    padding: 12px 25px;
+    font-size: 20px;
+    font-family: 'Press Start 2P', cursive;
+    color: #fff;
+    text-transform: uppercase;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+}
+
+.gaming-btn::before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    border: 3px solid rgba(255, 255, 255, 0.5);
+    transform: scale(0);
+    transition: transform 0.3s ease-in-out;
+}
+
+.gaming-btn:hover {
+    background: linear-gradient(45deg, #ff7300, #ff0000);
+    transform: scale(1.1);
+    box-shadow: 0 0 20px #ff0000;
+}
+
+.gaming-btn:hover::before {
+    transform: scale(1);
+}
+
+.gaming-btn:active {
+    transform: scale(1);
+    box-shadow: 0 0 5px #ff0000;
+}
