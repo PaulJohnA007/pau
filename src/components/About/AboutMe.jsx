@@ -3,7 +3,7 @@ import '../About/About.mod.css'
 
 const AboutMe = () => {
   return (
-    <section class="about-me">
+    <section id="about-me">
         <div class="containerx">
             <h1 class="title">Welcome to My Gaming Realm</h1>
             <p class="intro">Hey there! I'm <span class="highlight">PJx</span>, a passionate gamer and developer who thrives in the digital world. I have competed in various gaming contests and aim to merge gaming with tech innovation.</p>
