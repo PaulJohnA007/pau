@@ -34,12 +34,11 @@ const Home = () => {
               <a href="#"><i className="bx bxl-instagram"></i></a>
               <a href="#"><i className="bx bxl-linkedin-square"></i></a>
             </div>
+            
+         
           </div>
-
-          {/* Profile Image (Placed on the Right) */}
-          <div className="profile-box">
-            <img src="src/assets/1b1.jpg" alt="Profile" className="profile-img" />
-          </div>
+ 
+          
         </div>
       </div>
     </section>

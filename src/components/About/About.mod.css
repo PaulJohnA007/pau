@@ -6,6 +6,7 @@ body {
     font-family: 'Press Start 2P', cursive;
     text-align: center;
 }
+ 
 
 .containerx {
     max-width: 1200px;
@@ -15,9 +16,8 @@ body {
     border-radius: 20px;
     background: linear-gradient(145deg, #222, #111);
     box-shadow: 0 0 20px #00ffcc;
-    width: 100%; 
-    max-width: 1200px;
-    padding: 30px 20px;
+    width: 100%;  
+    padding: 20px 40px;
     z-index: 1;
 }
 

@@ -4,32 +4,25 @@
   box-sizing: border-box;
   text-decoration: none;
 }
-
-
-#hero {
-  width: 100%;
-  min-height: 100vh; 
-  background-size: cover;
-  padding-top: 32px;
-  display: flex;
-  justify-content: center;
-  text-align: center;
-  color: #fff;
-  position: relative;
-}
-
-#hero::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.3);
-}
-
-.container {
+ 
+ 
+.container { 
   width: 100%;
   max-width: 1200px;
-  padding: 0 20px;
+  padding: 20px;
+  margin: 0 auto;  
+  box-sizing: border-box;  
   z-index: 1;
+} 
+@media (max-width: 768px) {
+  .container {
+    padding: 15px; /* Reduce padding for smaller screens */
+  }
+} 
+@media (max-width: 480px) {
+  .container {
+    padding: 10px; /* Further reduction for very small screens */
+  }
 }
 
 /* Navbar */
@@ -37,16 +30,14 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 20px;
-  margin-bottom: 80px;
-}
-
+  padding:   20px;
+  
+} 
 .navbar .menu {
   display: flex;
   align-items: center;
   gap: 20px;
-}
-
+} 
 .navbar .menu a {
   color: #fff;
   font-size: 1.2rem;
@@ -55,13 +46,11 @@
   text-decoration: none;
   transition: color 0.3s ease, border-bottom 0.3s ease;
   border-bottom: 2px solid transparent;
-}
-
+} 
 .navbar .menu a:hover {
   color: #f0f0f0;
   border-bottom: 2px solid #f0f0f0;
-} 
-
+}  
 .navbar .menu a:hover,
 .navbar .menu a:focus,
 .navbar .menu a:active {
@@ -74,8 +63,7 @@
 .logo a { 
   font-size: 40px;
   font-weight: 700;
-  color: rgb(255, 255, 0);
-  background-color: rgba(0, 0, 0, 0.1);
+  color: rgb(255, 255, 0); 
   padding: 10px 20px;
   border-radius: 10px;
   display: inline-block;
@@ -88,14 +76,10 @@
 }
 
 /* Hero Content */
-.hero-content {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 5rem;
-  flex-wrap: wrap;
-  text-align: left;
+.hero-content{
+  padding: 50px;
 }
+ 
 
 /* Hero Text */
 .hero-box {
@@ -103,6 +87,7 @@
   max-width: 700px;
   margin: auto;
   text-align: center;
+  
 }
 
 .hero-heading {
@@ -175,26 +160,7 @@
   box-shadow: 0 0 10px #0077ff;
 }
 
-/* Profile Image */
-.profile-box {
-  max-width: 220px;
-  border-radius: 50%;
-  overflow: hidden;
-  box-shadow: 0 14px 12px rgba(0, 0, 0, 0.3);
-  position: relative;
-  right: 150px;
-}
-
-.profile-img {
-  width: 100%;
-  height: auto;
-  border-radius: 50%;
-  transition: transform 0.3s ease-in-out;
-}
-
-.profile-img:hover {
-  transform: scale(1.05);
-}
+ 
 
 /* Responsive Design */
 @media screen and (max-width: 768px) {
