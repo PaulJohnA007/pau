@@ -1,35 +1,82 @@
-@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;700&display=swap');
 
 body {
-    background-color: #000000;
-    color: #ffffff;
-    font-family: 'Press Start 2P', cursive;
-    text-align: center;
+  font-family: 'Chakra Petch', sans-serif;
+  background: black;
+  color: #00ffcc;
+  text-align: center;
+  text-transform: uppercase;
 }
- 
 
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: black;
+  z-index: -1;
+  overflow: hidden;
+}
+
+@keyframes moveBackground {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 0 100%;
+  }
+}
+
+.animated-bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(
+    rgba(0, 255, 204, 0.1) 10%, 
+    rgba(0, 255, 204, 0.3) 50%, 
+    rgba(0, 255, 204, 0.1) 90%
+  ), 
+  url('https://www.transparenttextures.com/patterns/asfalt-dark.png');
+  background-size: 100% 200%;
+  animation: moveBackground 5s linear infinite;
+  opacity: 0.2;
+}
+#about-me { 
+    margin: 0 auto;  
+    padding: 50px;  
+    height: auto;  
+  } 
+  
 .containerx {
     max-width: 1200px;
-    margin: auto;
-    padding: 10px;
-    border: 3px solid #00ffcc;
+    margin: 0 auto; 
+    border: 2px solid #00ffcc;
     border-radius: 20px;
     background: linear-gradient(145deg, #222, #111);
     box-shadow: 0 0 20px #00ffcc;
-    width: 100%;  
-    padding: 20px 40px;
+    width: 80%;  
+    padding: 15px 40px;
     z-index: 1;
 }
 
-.title {
-    font-size: 24px;
-    color: #00ffcc;
-    text-shadow: 0 0 10px #00ffcc;
-    padding-bottom: 30px;
-}
 
-.highlight {
+.title {
+    text-transform: uppercase;
+    font-size: 25px;
+    color: #000000;
+    text-shadow: 0 0 10px #00ffcc;
+    padding-bottom: 15px;
+}
+.career h2, .fun-fact h2, .skills h2, .cta h2{
+    color: #ffffff;
+}
+ 
+
+.highlight { 
     color: #ffcc00;
+    text-shadow: 0 0 10px #00ffcc;
+    font-size: 20px;
 }
 
 .details, .skills, .cta {
@@ -39,7 +86,7 @@ body {
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
 }
-
+ 
 .skills ul {
     padding: 15px;
     list-style: none;
@@ -47,15 +94,16 @@ body {
 }
 
 .skills li {
-    margin: 10px 0;
+    margin: 5px;
 }
 
 .gaming-btn {
+    margin-top: 5px;
     background: linear-gradient(45deg, #ff0000, #ff7300);
-    border: 2px solid #fff;
-    padding: 12px 25px;
+    border: 2px solid #00ffcc;
+    padding: 10px 15px;
     font-size: 20px;
-    font-family: 'Press Start 2P', cursive;
+    font-family: 'Chakra Petch', sans-serif;
     color: #fff;
     text-transform: uppercase;
     cursor: pointer;
@@ -65,7 +113,7 @@ body {
 }
 
 .gaming-btn::before {
-    content: '';
+    content: ' ';
     position: absolute;
     top: -5px;
     left: -5px;
