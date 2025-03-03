@@ -1,11 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;700&display=swap');
+
+body {
+  font-family: 'Chakra Petch', sans-serif;
+  background: black;
+  color: #00ffcc;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: black;
+  z-index: -1;
+  overflow: hidden;
+}
+
+@keyframes moveBackground {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 0 100%;
+  }
+}
+
+.animated-bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(
+    rgba(0, 255, 204, 0.1) 10%, 
+    rgba(0, 255, 204, 0.3) 50%, 
+    rgba(0, 255, 204, 0.1) 90%
+  ), 
+  url('https://www.transparenttextures.com/patterns/asfalt-dark.png');
+  background-size: 100% 200%;
+  animation: moveBackground 5s linear infinite;
+  opacity: 0.2;
+}
  * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   text-decoration: none;
 }
- 
- 
+
+
 .container { 
   width: 100%;
   max-width: 1200px;
@@ -30,33 +74,55 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding:   20px;
-  
+  padding: 20px;
+  position: relative;
 } 
-.navbar .menu {
+.menu {
   display: flex;
   align-items: center;
   gap: 20px;
 } 
-.navbar .menu a {
+.menu a {
   color: #fff;
   font-size: 1.2rem;
   letter-spacing: 3px;
-  padding-bottom: 5px;
   text-decoration: none;
   transition: color 0.3s ease, border-bottom 0.3s ease;
-  border-bottom: 2px solid transparent;
 } 
-.navbar .menu a:hover {
-  color: #f0f0f0;
-  border-bottom: 2px solid #f0f0f0;
-}  
-.navbar .menu a:hover,
-.navbar .menu a:focus,
-.navbar .menu a:active {
- color: rgb(255, 255, 0);
-  border-bottom: 2px solid #f0f0f0;
-  padding-bottom: 10px;
+.menu a:hover {
+  color: yellow;
+  padding-bottom: 5px;
+  border-bottom: 2px solid yellow;
+} 
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+} 
+.bar {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  margin: 5px 0;
+} 
+@media (max-width: 768px) {
+  .menu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background: rgba(0, 0, 0, 0.8);
+    width: 100%;
+    padding: 10px 0;
+    text-align: center;
+  } 
+  .menu.open {
+    display: flex;
+  } 
+  .menu-toggle {
+    display: flex;
+  }
 }
 
 /* Logo */
@@ -76,8 +142,71 @@
 }
 
 /* Hero Content */
-.hero-content{
-  padding: 50px;
+.hero-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  padding-bottom: 100px;
+}
+
+.hero-image {
+  position: relative;
+  margin-right: 100px; /* Adjusted margin to move the image more to the left */
+}
+
+@media (max-width: 768px) {
+  .hero-image {
+    margin-right: 0; /* Reset margin for smaller screens */
+    margin-top: 20px; /* Add top margin for spacing */
+  }
+}
+
+.hero-image img {
+  max-width: 200px;
+  border-radius: 50%;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  position: relative;
+  z-index: 1;
+}
+
+.hero-image::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(0, 255, 204, 0.5), rgba(0, 204, 255, 0.5));
+  animation: gamingAnimation 5s linear infinite;
+  z-index: 0;
+}
+
+@keyframes gamingAnimation {
+  0% {
+    transform: scale(1);
+    filter: blur(0px);
+  }
+  50% {
+    transform: scale(1.1);
+    filter: blur(5px);
+  }
+  100% {
+    transform: scale(1);
+    filter: blur(0px);
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-content {
+    flex-direction: column;
+  }
+
+  .hero-image {
+    margin-left: 0;
+    margin-top: 20px;
+  }
 }
  
 
@@ -103,6 +232,21 @@
   margin-top: 1rem;
   color: #f8f8f8;
   margin-bottom: 20px;
+  overflow: hidden;
+  white-space: nowrap; 
+  animation: typing 5.5s steps(40, end) infinite;
+  display: inline-block;
+  margin: 0 auto;
+}
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent; }
+  50% { border-color: orange; }
 }
 
 .hero-desc {
@@ -149,7 +293,7 @@
   border: 2px solid rgb(255, 217, 0);
   border-radius: 50%;
   font-size: 20px;
-  color: #fff;
+  color: #2adada;
   transition: transform 0.3s ease-in-out;
   margin: 5px;
 }
