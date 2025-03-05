@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;700&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css');
 
 body {
   font-family: 'Chakra Petch', sans-serif;
@@ -42,99 +43,128 @@ body {
   animation: moveBackground 5s linear infinite;
   opacity: 0.2;
 }
-#about-me { 
-    margin: 0 auto;  
-    padding: 50px;  
-    height: auto;  
-  } 
-  
-.containerx {
-    max-width: 1200px;
-    margin: 0 auto; 
-    border: 2px solid #00ffcc;
-    border-radius: 20px;
-    background: linear-gradient(145deg, #222, #111);
-    box-shadow: 0 0 20px #00ffcc;
-    width: 80%;  
-    padding: 15px 40px;
-    z-index: 1;
-}
 
+#about-me { 
+  margin: 0 auto;  
+  padding: 50px;  
+  height: auto;  
+} 
+
+.containerx {
+  max-width: 1200px;
+  margin: 0 auto; 
+  border: 2px solid #00ffcc;
+  border-radius: 20px;
+  background: linear-gradient(145deg, #222, #111);
+  box-shadow: 0 0 20px #00ffcc;
+  width: 80%;  
+  padding: 15px 40px;
+  z-index: 1;
+}
 
 .title {
-    text-transform: uppercase;
-    font-size: 25px;
-    color: #000000;
-    text-shadow: 0 0 10px #00ffcc;
-    padding-bottom: 15px;
+  text-transform: uppercase;
+  font-size: 25px;
+  color: #000000;
+  text-shadow: 0 0 10px #00ffcc;
+  padding-bottom: 15px;
 }
-.career h2, .fun-fact h2, .skills h2, .cta h2{
-    color: #ffffff;
+
+.career h2, .fun-fact h2, .skills h2, .cta h2 {
+  color: #ffffff;
 }
- 
 
 .highlight { 
-    color: #ffcc00;
-    text-shadow: 0 0 10px #00ffcc;
-    font-size: 20px;
+  color: #ffcc00;
+  text-shadow: 0 0 10px #00ffcc;
+  font-size: 20px;
 }
 
 .details, .skills, .cta {
-    margin: 20px 0;
-    padding: 15px;
-    background: #1a1a1a;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
-}
- 
-.skills ul {
-    padding: 15px;
-    list-style: none;
-    padding: 0;
+  margin: 20px 0;
+  padding: 15px;
+  background: #1a1a1a;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
 }
 
-.skills li {
-    margin: 5px;
+.skills-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+} 
+.skills-list li {
+  margin: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #1a1a1a;
+  border: 2px solid #00ffcc;
+  border-radius: 5px;
+  padding: 10px;
+  transition: background 0.3s ease, transform 0.3s ease;
+  width: 30%;
+} 
+.skills-list li:hover {
+  background: #000000;
+  transform: scale(1.05);
+} 
+.skills-list li i {
+  margin-right: 5px;
+  font-size: 1.5em;
+} 
+@media (max-width: 768px) {
+  .skills-list li {
+    width: 45%;
+  }
+} 
+@media (max-width: 480px) {
+  .skills-list li {
+    width: 100%;
+  }
 }
+
 
 .gaming-btn {
-    margin-top: 5px;
-    background: linear-gradient(45deg, #ff0000, #ff7300);
-    border: 2px solid #00ffcc;
-    padding: 10px 15px;
-    font-size: 20px;
-    font-family: 'Chakra Petch', sans-serif;
-    color: #fff;
-    text-transform: uppercase;
-    cursor: pointer;
-    position: relative;
-    overflow: hidden;
-    transition: all 0.3s ease-in-out;
+  margin-top: 5px;
+  background: linear-gradient(45deg, #ff0000, #ff7300);
+  border: 2px solid #00ffcc;
+  padding: 10px 15px;
+  font-size: 20px;
+  font-family: 'Chakra Petch', sans-serif;
+  color: #fff;
+  text-transform: uppercase;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
 }
 
 .gaming-btn::before {
-    content: ' ';
-    position: absolute;
-    top: -5px;
-    left: -5px;
-    right: -5px;
-    bottom: -5px;
-    border: 3px solid rgba(255, 255, 255, 0.5);
-    transform: scale(0);
-    transition: transform 0.3s ease-in-out;
+  content: ' ';
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+  border: 3px solid rgba(255, 255, 255, 0.5);
+  transform: scale(0);
+  transition: transform 0.3s ease-in-out;
 }
 
 .gaming-btn:hover {
-    background: linear-gradient(45deg, #ff7300, #ff0000);
-    transform: scale(1.1);
-    box-shadow: 0 0 20px #ff0000;
+  background: linear-gradient(45deg, #ff7300, #ff0000);
+  transform: scale(1.1);
+  box-shadow: 0 0 20px #ff0000;
 }
 
 .gaming-btn:hover::before {
-    transform: scale(1);
+  transform: scale(1);
 }
 
 .gaming-btn:active {
-    transform: scale(1);
-    box-shadow: 0 0 5px #ff0000;
+  transform: scale(1);
+  box-shadow: 0 0 5px #ff0000;
 }
