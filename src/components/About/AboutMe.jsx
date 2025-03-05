@@ -3,18 +3,16 @@ import '../About/About.mod.css';
 
 const AboutMe = () => {
   return (
-    
     <section id="about-me"> 
-    <div class="background">
-        <div class="animated-bg"></div>
-    </div>
+      <div className="background">
+        <div className="animated-bg"></div>
+      </div>
 
       <div className="containerx">
         <h1 className="title">Welcome to My Gaming Realm</h1>
         <p className="intro mb-4">
-  Hey there! I'm <span className="highlight">PJx</span>, a passionate gamer and developer who thrives in the digital world. I have competed in various gaming contests and aim to merge gaming with tech innovation.
-</p>
-
+          Hey there! I'm <span className="highlight">PJx</span>, a passionate gamer and developer who thrives in the digital world. I have competed in various gaming contests and aim to merge gaming with tech innovation.
+        </p>
 
         <article className="details">
           <div className="career">
@@ -29,11 +27,13 @@ const AboutMe = () => {
 
         <aside className="skills">
           <h2>Skills & Expertise</h2>
-          <ul>
-            <li>Game Development (Unity, Unreal Engine)</li>
-            <li>Programming (C++, Python, JavaScript)</li>
-            <li>3D Modeling & Animation</li>
-            <li>AI & Machine Learning in Gaming</li>
+          <ul className="skills-list">
+            <li><i className="fab fa-react"></i> ReactJS</li>
+            <li><i className="fab fa-js-square"></i> JavaScript</li>
+            <li><i className="fab fa-css3-alt"></i> CSS</li>
+            <li><i className="fab fa-python"></i> Python</li>
+            <li><i className="fab fa-node-js"></i> NodeJS</li>
+            <li><i className="fas fa-code"></i> C++</li>
           </ul>
         </aside>
 
