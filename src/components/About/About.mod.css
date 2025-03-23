@@ -19,7 +19,6 @@ body {
   z-index: -1;
   overflow: hidden;
 }
-
 @keyframes moveBackground {
   from {
     background-position: 0 0;
@@ -28,7 +27,6 @@ body {
     background-position: 0 100%;
   }
 }
-
 .animated-bg {
   position: absolute;
   width: 100%;
@@ -49,7 +47,6 @@ body {
   padding: 50px;  
   height: auto;  
 } 
-
 .containerx {
   max-width: 1200px;
   margin: 0 auto; 
@@ -61,7 +58,6 @@ body {
   padding: 15px 40px;
   z-index: 1;
 }
-
 .title {
   text-transform: uppercase;
   font-size: 25px;
@@ -69,17 +65,14 @@ body {
   text-shadow: 0 0 10px #00ffcc;
   padding-bottom: 15px;
 }
-
 .career h2, .fun-fact h2, .skills h2, .cta h2 {
   color: #ffffff;
 }
-
 .highlight { 
   color: #ffcc00;
   text-shadow: 0 0 10px #00ffcc;
   font-size: 20px;
 }
-
 .details, .skills, .cta {
   margin: 20px 0;
   padding: 15px;
@@ -115,14 +108,35 @@ body {
   margin-right: 5px;
   font-size: 1.5em;
 } 
-@media (max-width: 768px) {
-  .skills-list li {
-    width: 45%;
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .containerx {
+    width: 95%;
+    padding: 4vw;
   }
-} 
-@media (max-width: 480px) {
+
+  .title {
+    font-size: 3vw;
+  }
+
   .skills-list li {
+    width: 45%; /* 2 columns on tablets */
+  }
+}
+
+@media (max-width: 768px) {
+  .containerx {
     width: 100%;
+    padding: 5vw;
+  }
+
+  .title {
+    font-size: 4vw;
+  }
+
+  .skills-list li {
+    width: 100%; /* Full width on mobile */
   }
 }
 
