@@ -3,6 +3,9 @@ import { Link } from 'react-router-dom';
 
 const Home = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false); // State for modal visibility
+
+  const closeModal = () => setIsModalOpen(false); // Function to close modal
 
   return (
     <section id="hero">
@@ -16,10 +19,10 @@ const Home = () => {
             <a href="#">PJx.</a>
           </div>
           <div className={`menu ${menuOpen ? 'open' : ''}`}>
-            <Link to="/">Home</Link>
-            <Link to="/about">About</Link>
-            <Link to="/contact">Contact</Link>
-            <Link to="/projects">Projects</Link>
+            <Link to="/">Home🏡</Link>
+            <Link to="/about">About💡</Link>
+            <Link to="/blogspot">Blog📝</Link>  
+            <Link to="/project">Projects🛠️</Link>
           </div>
           <div className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)}>
             <div className="bar"></div>
@@ -36,13 +39,19 @@ const Home = () => {
               If you believe it will work, you'll see opportunities. If you believe it won't, you will see obstacles.
             </p>
             <div className="btn-box">
-              <a href="#" className="cta-btn-try">Download CV</a>
+              <a href="./assets/CV.pdf" className="cta-btn-try" download="./assets/CV.pdf">Download CV</a>
+              <a
+                href="#"
+                className="cta-btn-try experience-btn"
+                onClick={() => setIsModalOpen(true)} // Open modal on click
+              >
+                Experience
+              </a>
             </div>
             <div className="social-med">
-              <a href="#"><i className="bx bxl-github"></i></a>
-              <a href="#"><i className="bx bxl-facebook-square"></i></a>
-              <a href="#"><i className="bx bxl-instagram"></i></a>
-              <a href="#"><i className="bx bxl-linkedin-square"></i></a>
+              <a href="https://github.com/PaulJohnA007"><i className="bx bxl-github"></i></a>
+              <a href="https://www.facebook.com/pj.acabo.1"><i className="bx bxl-facebook-square"></i></a>
+              <a href="https://www.instagram.com/pauljohnacabo?igsh=MTcyYWcxZ2x0ZXduNw=="><i className="bx bxl-instagram"></i></a> 
             </div>
           </div>
           <div className="hero-image">
@@ -50,7 +59,33 @@ const Home = () => {
           </div>
         </div>
       </div>
+      {isModalOpen && (
+        <div className="modal" onClick={closeModal}>
+          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+            <span className="close" onClick={closeModal}>&times;</span>
+            <section className="experience">
+              <h2>Experience</h2>
+              <div className="experience-item">
+                <h4>Frontend Developer</h4>
+                <p>Worked on building responsive and interactive web applications using React and CSS frameworks.</p>
+                <span>Jan 2023 - Present</span>
+              </div>
+              <div className="experience-item">
+                <h4>UI/UX Designer</h4>
+                <p>Designed user-friendly interfaces and improved user experience for mobile and web platforms.</p>
+                <span>Jun 2021 - Dec 2022</span>
+              </div>
+              <div className="experience-item">
+                <h4>Intern</h4>
+                <p>Assisted in developing internal tools and gained hands-on experience with modern web technologies.</p>
+                <span>Jan 2021 - May 2021</span>
+              </div>
+            </section>
+          </div>
+        </div>
+      )}
     </section>
+    
   );
 };
 
