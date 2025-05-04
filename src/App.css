@@ -7,7 +7,7 @@ body {
   text-align: center;
   text-transform: uppercase;
 }
-
+ 
 .background {
   position: fixed;
   top: 0;
@@ -142,7 +142,7 @@ body {
   .menu-toggle div {
     width: 30px;
     height: 4px;
-    background: linear-gradient(135deg, #ffd700, #ff8c00);
+    background: linear-gradient(135deg, #ffd701, #ff8c00);
     margin: 5px 0;
     border-radius: 2px;
     transition: all 0.3s ease;
@@ -310,6 +310,7 @@ body {
 
 .cta-btn-try {
   display: inline-block;
+  margin: 10px;
   padding: 10px 20px;
   background: linear-gradient(135deg, #ffd700, #ff8c00);
   color: black;

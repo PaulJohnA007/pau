@@ -40,7 +40,9 @@ const AboutMe = () => {
         <div className="cta">
           <h2>Let's Connect!</h2>
           <p>Want to collaborate or just chat about games? Hit me up!</p>
-          <button className="gaming-btn">Contact Me</button>
+          <a href="https://www.facebook.com/pj.acabo.1" target="_blank" rel="noopener noreferrer">
+            <button className="gaming-btn">Contact Me</button>
+          </a>
         </div>
       </div>
     </section>
