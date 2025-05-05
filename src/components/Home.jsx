@@ -65,20 +65,22 @@ const Home = () => {
             <span className="close" onClick={closeModal}>&times;</span>
             <section className="experience">
               <h2>Experience</h2>
-              <div className="experience-item">
-                <h4>Frontend Developer</h4>
-                <p>Worked on building responsive and interactive web applications using React and CSS frameworks.</p>
-                <span>Jan 2023 - Present</span>
-              </div>
-              <div className="experience-item">
-                <h4>UI/UX Designer</h4>
-                <p>Designed user-friendly interfaces and improved user experience for mobile and web platforms.</p>
-                <span>Jun 2021 - Dec 2022</span>
-              </div>
-              <div className="experience-item">
-                <h4>Intern</h4>
-                <p>Assisted in developing internal tools and gained hands-on experience with modern web technologies.</p>
-                <span>Jan 2021 - May 2021</span>
+              <div className="experience-list">
+                <div className="experience-item">
+                  <h4>Frontend Developer</h4>
+                  <p>Worked on building responsive and interactive web applications using React and CSS frameworks.</p>
+                  <span>Jan 2023 - Present</span>
+                </div>
+                <div className="experience-item">
+                  <h4>UI/UX Designer</h4>
+                  <p>Designed user-friendly interfaces and improved user experience for mobile and web platforms.</p>
+                  <span>Jun 2021 - Dec 2022</span>
+                </div>
+                <div className="experience-item">
+                  <h4>Intern</h4>
+                  <p>Assisted in developing internal tools and gained hands-on experience with modern web technologies.</p>
+                  <span>Jan 2021 - May 2021</span>
+                </div>
               </div>
             </section>
           </div>

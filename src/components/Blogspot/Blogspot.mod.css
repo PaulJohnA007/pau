@@ -35,7 +35,7 @@ a:hover {
 }
 
 .blog-cards {
-  display: grid;
+   
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 20px;
   margin-top: 20px;
@@ -83,10 +83,11 @@ a:hover {
   border-radius: 10px;
   max-width: 800px;
   width: 100%;
-  height: 80%; 
+  height: auto; /* change from fixed 80% to auto for better vertical fit */
   color: #ff0000;
   position: relative;
   box-shadow: 0 0 20px #00ffcc;
+  box-sizing: border-box;
 }
 
 .modal-content img {
@@ -95,20 +96,11 @@ a:hover {
   margin-top: 15px;
   border-radius: 8px;
 }
-
-.close {
-  position: absolute;
-  top: 10px;
-  right: 15px;
-  font-size: 30px;
-  cursor: pointer;
-  color: #ff4444;
-}
-
+  
 .experience-item,
 .project-card {
   background: #1a1a1a;
-  padding: 20px;
+  padding: 50px;
   margin: 10px 0;
   border: 1px solid #333;
   border-left: 4px solid #00ffcc;
@@ -151,8 +143,7 @@ a:hover {
 .blog-cards, .project-cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
-  margin-top: 20px;
+  gap: 20px; 
 }
 
 .blog-card, .project-card {
@@ -207,20 +198,24 @@ a:hover {
   text-decoration: none;
 }
 
-.social-icons a:hover {
+social-icons a:hover {
   text-decoration: underline;
   
 }
 
 @media (max-width: 768px) {
   .modal-content {
-    width: 95%;
-    max-height: 90%;
-    padding: 1.5rem;
+    max-width: 700px;
+    padding: 2.5rem;
   }
-
   .blog-card img, .project-card img {
     height: 120px;
+  }
+  @media (min-width: 1024px) {
+    .modal-content {
+      max-width: 800px;
+      padding: 3rem;
+    }
   }
 }
 
@@ -316,7 +311,7 @@ a:hover {
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    height: 105%;
     background: rgba(0,0,0,0.6);
     display: flex;
     align-items: center;
@@ -326,15 +321,31 @@ a:hover {
   }
   
   .modal-content {
-    background: white;
-    border-radius: 1rem;
+    background-color: #e4dbdb;
     padding: 2rem;
-    max-width: 1000px;
-    max-height: 630px;
-    width: 90%;
+    border: 2px solid #00ffcc;
+    border-radius: 10px;
+    max-width: 90vw;
+    width: 100%;
+    color: #ff0000;
     position: relative;
-    animation: slideUp 1s ease;
+    box-shadow: 0 0 20px #00ffcc;
+    box-sizing: border-box;
+    margin: 1rem auto;
+  
+    max-height: 80vh;
+    overflow-y: auto;
+    overflow-x: auto;
+  
+    /* Hide scrollbar for WebKit browsers */
+    scrollbar-width: none;         /* Firefox */
+    -ms-overflow-style: none;      /* IE and Edge */
+  
   }
+  .modal-content::-webkit-scrollbar {
+    display: none;                 /* Chrome, Safari, and Opera */
+  }
+  
   
   .close {
     position: absolute;
@@ -358,8 +369,8 @@ a:hover {
   }
   
   .modal-images img {
-    width: calc(33% - 0.5rem);
-    height: 250px;
+    width: calc(33% - 0.5rem); /* Increased from 33.333% to 50% */
+    height: 400px; /* Increased from 250px */
     object-fit: cover;
     border-radius: 0.5rem;
   }
@@ -372,7 +383,14 @@ a:hover {
   }
   
   /* Projects */
- 
+.experience {
+  background: #f1f1f1;
+  padding: 20px;
+  border-radius: 2rem;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+  margin-top: 2px;
+   
+}
  
 
 .experience-item {
@@ -452,8 +470,9 @@ a:hover {
   
   /* Experience and Contact */
   
-  .experience, .contact { 
-    background: rgb(233, 227, 227);
+  
+  .contact { 
+    background: rgb(231, 231, 231);
     padding: 1px;
     border-radius: 1rem;
     box-shadow: 0 8px 16px rgba(0,0,0,0.1);
@@ -475,6 +494,7 @@ a:hover {
   
   .social-icons a:hover {
     color: #2c3e50;
+ 
   }
   
   /* Animations */
@@ -489,11 +509,55 @@ a:hover {
   }
   
   /* Responsive tweaks */
+  
   @media (max-width: 768px) {
+    .modal-images {
+      max-height: 70vh; /* Adjust height as needed */
+      overflow-y: auto;
+  
+      scrollbar-width: none; /* Firefox */
+      -ms-overflow-style: none; /* IE 10+ */
+    }
+  
+    .modal-images::-webkit-scrollbar {
+      display: none; /* Chrome, Safari */
+    }
+  
     .modal-images img {
       width: 100%;
+      display: block;
+    }
+    .modal-images {
+      scrollbar-width: none; /* Firefox */
+      -ms-overflow-style: none; /* IE 10+ */
+    }
+    .modal-images::-webkit-scrollbar {
+      display: none; /* Chrome, Safari */
+    }
+    
+  }
+  
+  @media (max-width: 768px) {
+    .experience {
+      width: 95%;
+      max-width: 500px;
+      margin: 0 auto;
+      padding: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      
+      height: 105%; /* Taller fixed height based on viewport */
+      overflow-y: auto;
+  
+      scrollbar-width: none; /* Firefox */
+      -ms-overflow-style: none; /* IE 10+ */
+    }
+  
+    .experience::-webkit-scrollbar {
+      display: none; /* Chrome, Safari */
     }
   }
+  
+  
 
 .animated-background {
   background-image: linear-gradient(
@@ -516,5 +580,36 @@ a:hover {
   }
   100% {
     background-position: 0% 50%;
+  }
+}
+body, .blogspot {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+/* Tablet and below */
+@media (max-width: 768px) {
+  h2 {
+    font-size: 20px;
+  }
+
+  .modal-images img {
+    width: calc(50% - 0.5rem);
+    height: 200px;
+  }
+}
+
+/* Mobile devices */
+@media (max-width: 480px) {
+  h2 {
+    font-size: 2rem;
+  }
+
+  .modal-content {
+    padding: 20px;
+  }
+
+  .modal-images img {
+    width: 100%;
+    height: 180px;
   }
 }
